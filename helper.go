@@ -13,6 +13,7 @@ import (
 	// Register all known image decoders from the extension library.
 	_ "golang.org/x/image/bmp"
 	_ "golang.org/x/image/tiff"
+	_ "golang.org/x/image/webp"
 )
 
 // LoadFile loads and decodes the named file, returning an image and the
