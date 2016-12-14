@@ -19,10 +19,6 @@ func Grayscale(img image.Image) *image.Gray {
 	case *image.Gray:
 		return img
 	default:
-		// TODO: Benchmarks show this is surprisingly fast for CMYK images on
-		// Go1.7/amd64, maybe it's the SSA-backend?  Either way, this might be
-		// the fastest path for all images now.  Poke around in the libraries
-		// and check the dissassembly of these functions.
 		gray := image.NewGray(img.Bounds())
 		for y := gray.Rect.Min.Y; y <= gray.Rect.Max.Y; y++ {
 			for x := gray.Rect.Min.X; x <= gray.Rect.Max.X; x++ {
